@@ -1,5 +1,8 @@
+//This file extends the layout file (same thing but adds on to it --> inherits from it)
 extends layout
 
+//below block content is added on to the layout
 block content
   h1= title
+  //if we have a mixture of plain text and a variable, we use the syntax of #{...}
   p Welcome to #{title}

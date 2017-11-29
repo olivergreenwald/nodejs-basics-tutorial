@@ -1,7 +1,29 @@
+//don't have tags (< or >) --> we use tabs instead
+
 doctype html
 html
   head
+  	// title title without an equals makes the title of the page "title"
+  	//it is telling jade to not just render the text but use the variable instead for the title
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+  	ul
+  		li My Text
+  		//below allows there to be multiple lines inside Sublime so that it isn't one big line off the screen
+  		li.
+  			asdfasdfasdf asdfasdf 
+  			asdf asdfasd asddfasdf
+  			asdfasd asdf asdsdfasd
+  	//creates a text field with an id tag
+  	input(type = 'text').class-name#anyid
+  	//defines variables inside Jade
+  	- var condition = true
+  	if condition
+  		p It's true
+  	- var anyArray = [1, 2, 3]
+  	each value in anyArray
+  		p = value
+
+  	
     block content

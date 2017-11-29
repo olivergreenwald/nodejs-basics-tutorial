@@ -1,19 +1,14 @@
+//THESE ARE SUB-ROUTES
+
 var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
+//for the / --> we get this route
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Cool, huh!', condition: false });
+	//rendering file and displaying text
+	//You can change the "Express" to change the title of the page
+  res.render('index', { title: 'Express', condition: true });
 });
-
-/* GET users listing. */
-router.get('/users', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-router.get('/users/detail', function(req, res, next) {
-  res.send('detail');
-});
-
 
 module.exports = router;
