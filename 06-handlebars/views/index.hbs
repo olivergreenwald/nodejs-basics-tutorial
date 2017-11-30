@@ -1,11 +1,15 @@
 <h1>{{ title }}</h1>
 <p>Welcome to {{ title }}</p>
+//helpers are below
+//open this block with the '#' and close with the '/'
 {{# if condition }}
     Condition is met
 {{ else }}
    Condition not met
 {{/if}}
 
+//opens and closes the each again with # and /
 {{# each anyArray as |val key|}}
+	//makes a key and value
     {{ key }}: {{ val }}
 {{/each}}
