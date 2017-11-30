@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
+//express validator and session modules
 var expressValidator = require('express-validator');
 var expressSession = require('express-session');
 
@@ -22,9 +23,13 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+//have to use the expressValidator after the body is parsed becasue it needs to access the body
 app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//saveUninitialized if we set it to true, makes sure the session is saved even if it is not initialized
+//resave if set to true saved the session after each request even if it is not saved or modified
+//by setting resave to false, we will only save the file if we change it
 app.use(expressSession({secret: 'max', saveUninitialized: false, resave: false}));
 
 app.use('/', routes);

@@ -1,8 +1,10 @@
 <h1>{{ title }}</h1>
+//if the form is correct, then it will send success message
 {{# if success }}
     <section class="success">
         <h2>Successful Validation!</h2>
     </section>
+    //if there is errors, it will ask to resubmit
 {{ else }}
     {{# if errors }}
         <section class="errors">
@@ -13,6 +15,7 @@
             </ul>
         </section>
     {{/if}}
+    //this form asks for the user and pass and to confirm pass
     <form action="/submit" method="post">
         <div class="input">
             <label for="email">E-Mail</label>
